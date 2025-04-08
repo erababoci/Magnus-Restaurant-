@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnus Restaurant</title>
+    <link rel="stylesheet" href="style_home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="pictures_icons/Logo3.png" alt="Magnus">
+           
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="book.html" class="book-btn">Book A Table</a>
+        
+        <script>
+            const navLinks= document.querySelectorAll("nav ul li a");
+             navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+ navLinks.forEach(nav => nav.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+        </script>
+    </header>
+    
+
+    <section id="home" class="hero">
+        <h1>Best food for your taste</h1>
+        <p>Discover delectable cuisine and unforgettable moments in our welcoming, culinary haven.</p>
+        
+        <div class="cta-buttons">
+            <a href="book.html" class="btn primary">Book A Table</a>
+            <a href="menu.html" class="btn secondary">Explore Menu</a>
+        </div>
+    </section>
+    
+    <section id="menu">
+        <div class="menu-section">
+            <div class="menu-card">
+                <img src="pictures_icons/breakfast_icon.png" alt="Breakfast">
+                <h3>Breakfast</h3>
+                <p>Rise and shine with every bite – a perfect start to your day!</p>
+                <a href="menu.html?category=breakfast">Explore Menu</a>
+            </div>
+            <div class="menu-card">
+                <img src="pictures_icons/maindish_icon.png" alt="Main Dishes">
+                <h3>Main Dishes</h3>
+                <p>Savor the heart of every meal, where flavors come alive!</p>
+                <a href="menu.html?category=main">Explore Menu</a>
+            </div>
+            <div class="menu-card">
+                <img src="pictures_icons/drinnks_icon.png" alt="Drinks">
+                <h3>Drinks</h3>
+                <p>Sip, refresh, and indulge – the perfect blend for every mood!</p>
+                <a href="menu.html?category=drinks">Explore Menu</a>
+            </div>
+            <div class="menu-card">
+                <img src="pictures_icons/desert_icon.png" alt="Desserts">
+                <h3>Desserts</h3>
+                <p>A sweet escape in every bite – because life is better with dessert!</p>
+                <a href="menu.html#category=desserts">Explore Menu</a>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const category = urlParams.get("category"); // Get the category from the URL
+    
+            if (category) {
+                // Simulate clicking the respective filter button
+                const targetButton = document.querySelector(`.filter-btn[data-filter="${category}"]`);
+                if (targetButton) {
+                    targetButton.click();
+                }
+            }
+        });
+    </script>
+    
+
+
+    </section>
+    <selection> 
+         <!-- About -->
+    <section id="about">
+        <div class="about-section">
+            <div class="image-container">
+                <img src="/pictures_icons/food.jpg" alt="Delicious food">
+               
+            </div>
+            <div class="text-container">
+                <h2>We provide healthy food for your family.</h2>
+                <p>Our story began with a vision to create a unique dining experience that merges fine dining, exceptional service, and a vibrant ambiance. Rooted in the city’s rich culinary culture, we aim to honor our local roots while infusing a global palate.</p>
+                <p>At our place, we believe that dining is not just about food, but also about the overall experience. Our staff, renowned for their warmth and dedication, strives to make every visit an unforgettable event.</p>
+                <a href="aboutus.html" class="btn">More About Us</a>
+            </div>
+        </div>
+    </section>
+</selection>
+  
+    
+
+    <!-- Eventet -->
+    <section id="events" class="events">
+        <h2>Celebrate at MAGNUS</h2>
+        <p>From intimate gatherings to grand celebrations, Maison Rouge offers the perfect setting for your special occasion. Our dedicated events team ensures every detail is taken care of, creating memories that last a lifetime.</p>
+        
+        <div class="event-types">
+            <div class="event-type">
+                <img src="pictures_icons/images.jpg" alt="Wedding venue">
+                <h3>Weddings</h3>
+                <p>Create timeless memories in our elegant venue with personalized menus and impeccable service for up to 150 guests.</p>
+                <a href="book.html">Inquire Now</a>
+            </div>
+            <div class="event-type">
+                <img src="pictures_icons/images-1.jpg" alt="Birthday celebration">
+                <h3>Birthday Celebrations</h3>
+                <p>Mark your milestone with a sophisticated celebration featuring custom menus and exceptional service.</p>
+                <a href="book.html">Inquire Now</a>
+            </div>
+            <div class="event-type">
+                <img src="pictures_icons/download-2.jpg" alt="Corporate event">
+                <h3>Corporate Events</h3>
+                <p>Impress clients and colleagues with refined dining experiences in our private dining areas.</p>
+                <a href="book.html">Inquire Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Kontakti -->
+    <section id="contact" class="contact">
+        <div class="contact-info">
+            <h2>Contact Us</h2>
+            <p><strong>Address:</strong> 123 Elegant Avenue, Metro City</p>
+            <p><strong>Phone:</strong> (555) 123-4567</p>
+            <p><strong>Email:</strong> info@maisonrouge.com</p>
+            <p><strong>Hours:</strong><br>
+               Lunch: Tuesday - Sunday, 12:00 PM - 2:30 PM<br>
+               Dinner: Tuesday - Sunday, 6:00 PM - 10:30 PM<br>
+               Closed on Mondays
+            </p>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+<a href="https://x.com/i/flow/login?lang=en" class="fa fa-twitter"></a>
+<a href="https://www.instagram.com/" class ="fa fa-instagram"></a>
+
+        </div>
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <input type="tel" placeholder="Phone">
+               
+                <textarea rows="5" placeholder="Message" required></textarea>
+                <button type="submit">SEND MESSAG</button>
+            </form>
+        </div>
+    </section>
+    
+<!-- FOOTER -->
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Gourmet Street<br>Foodville, FV 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@deliciousrestaurant.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
+                    <li>Saturday - Sunday: 10:00 AM - 11:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html#menu">Menu</a></li>
+                    <li><a href="home.html#events">Reservations</a></li>
+                    <li><a href="home.html#about">About Us</a></li>
+                    <li><a href="home.html#contact">Contact</a></li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Delicious Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+   
+</body>
+</html>
+
+
+
+
+    

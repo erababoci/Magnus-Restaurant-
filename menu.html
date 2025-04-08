@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnus- Menu</title>
+    <link rel="stylesheet" href="#">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+      
+        <div class="logo">
+            <img src="pictures_icons/Logo3.png" alt="Magnus">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+                <li><a href="home.html#about">About</a></li>
+                <li><a href="home.html#menu">Menu</a></li>
+                <li><a href="home.html#events">Events</a></li>
+                <li><a href="home.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="book.html" class="book-btn">Book A Table</a>
+    </header>
+    
+    <script>
+        const navLinks = document.querySelectorAll("nav ul li a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                navLinks.forEach(nav => nav.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    </script>
+    <style>
+        /* menu syle*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    position: fixed;
+    padding: 20px 30px; 
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color:#0000008b; 
+    font-family: 'Serif', sans-serif;
+    width: 100%;
+    z-index: 1000; 
+    box-sizing: border-box;
+    opacity: 0.9;
+}
+
+/* Logo styling */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 150px;
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff; 
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    border-radius: 20px;
+}
+
+/* Active menu item */
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: rgb(255, 253, 253);
+}
+
+/* Hover effect */
+nav ul li a:hover {
+    background-color: rgba(203, 201, 201, 0.3);
+    color: rgb(255, 255, 255); 
+    border-radius: 20px;
+}
+
+/* Book A Table Button */
+.book-btn {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+   
+    border: 2px solid #f8ab04;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: rgba(241, 186, 21, 0.924);
+}
+    </style>
+    
+    <main>
+        <section class="menu-section">
+            <h1>Our Menu</h1>
+            <p class="subtitle">We consider all the drivers of change gives you the components you need to change to create a truly happens.</p>
+        
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="breakfast">Breakfast</button>
+                <button class="filter-btn" data-filter="main">Main Dishes</button>
+                <button class="filter-btn" data-filter="drinks">Drinks</button>
+                <button class="filter-btn" data-filter="desserts">Desserts</button>
+            </div>
+            
+            <div class="menu-grid">
+                <div class="menu-item" data-category="breakfast">
+                    <img src="pictures_icons/friedeggs.jpg" alt="Fried Eggs">
+                    <div class="item-details">
+                        <div class="price">$ 9.99</div>
+                        <h3>Fried Eggs</h3>
+                        <p>Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+      
+                <div class="menu-item" data-category="main">
+                    <img src="pictures_icons/hawaiipizza.jpg" alt="Hawaiian Pizza">
+                    <div class="item-details">
+                        <div class="price">$ 15.99</div>
+                        <h3>Hawaiian Pizza</h3>
+                        <p>Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="main">
+                    <img src="pictures_icons/hawaiipizza.jpg" alt="Hawaiian Pizza">
+                    <div class="item-details">
+                        <div class="price">$ 15.99</div>
+                        <h3>Hawaiian Pizza</h3>
+                        <p>Made with eggs, lettuce, salt, oil and other ingredients.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="breakfast">
+                    <img src="pictures_icons/waffles.jpg" alt="Classic Waffles">
+                    <div class="item-details">
+                        <div class="price">$ 12.99</div>
+                        <h3>Classic Waffles</h3>
+                        <p>Made with eggs, flour, fruits and other ingredients.</p>
+                    </div>
+                </div>
+        
+                <div class="menu-item" data-category="desserts">
+                    <img src="pictures_icons/Chocolate-ice-cream-thumbnail.jpg" alt="Chocolate Ice Cream">
+                    <div class="item-details">
+                        <div class="price">$ 18.09</div>
+                        <h3>Chocolate Ice Cream</h3>
+                        <p>Made with chocolate, milk, and other ingredients.</p>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="desserts">
+                    <img src="pictures_icons/Chocolate-ice-cream-thumbnail.jpg" alt="Chocolate Ice Cream">
+                    <div class="item-details">
+                        <div class="price">$ 18.09</div>
+                        <h3>Chocolate Ice Cream</h3>
+                        <p>Made with chocolate, milk, and other ingredients.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const filterButtons = document.querySelectorAll(".filter-btn");
+                const menuItems = document.querySelectorAll(".menu-item");
+        
+                filterButtons.forEach(button => {
+                    button.addEventListener("click", function () {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => btn.classList.remove("active"));
+        
+                        // Add active class to the clicked button
+                        this.classList.add("active");
+        
+                        // Get the filter value from the clicked button
+                        const filterValue = this.getAttribute("data-filter");
+        
+                        // Show/hide menu items based on the selected filter
+                        menuItems.forEach(item => {
+                            if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
+                                item.style.display = "block";
+                            } else {
+                                item.style.display = "none";
+                            }
+                        });
+                    });
+                });
+            });
+        </script>
+        
+       
+
+        <section class="delivery-section">
+            <div class="delivery-content">
+                <h2>You can order through apps</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit enim bibendum sed et aliquet aliquet risus tempor semper.</p>
+                
+                <div class="delivery-apps">
+                    <div class="app-row">
+                        <a href="https://www.ubereats.com" target="_blank">
+                            <img src="pictures_icons/delivery/Screenshot 2025-03-11 at 13.40.53.png" alt="UberEats">
+                        </a>
+                        
+                        <a href="https://www.grubhub.com" target="_blank">
+                            <img src="pictures_icons/delivery/Screenshot 2025-03-11 at 13.41.58.png" alt="Grubhub">
+                        </a>
+                        
+                        <a href="https://www.postmates.com" target="_blank">
+                            <img src="pictures_icons/delivery/Screenshot 2025-03-11 at 13.43.07.png" alt="Postmates">
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+  
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>123 Gourmet Street<br>Foodville, FV 12345</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@deliciousrestaurant.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Opening Hours</h3>
+                <ul>
+                    <li>Monday - Friday: 11:00 AM - 10:00 PM</li>
+                    <li>Saturday - Sunday: 10:00 AM - 11:00 PM</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.html#menu">Menu</a></li>
+                    <li><a href="home.html#events">Reservations</a></li>
+                    <li><a href="home.html#about">About Us</a></li>
+                    <li><a href="home.html#contact">Contact</a></li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Delicious Restaurant. All rights reserved.</p>
+        </div>
+    </footer>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: rgb(60, 60, 60);
+        background-color: rgb(0, 0, 0);
+    }
+    
+    
+ 
+    /* Menuja */
+    .menu-section {
+        padding: 4rem 5%;
+        text-align: center;
+    }
+    
+    .menu-section h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #f3f4f6;
+    }
+    
+    .subtitle {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        color: rgb(218, 213, 213);
+    }
+    
+    .menu-filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+    }
+    
+    .menu-filters button {
+        padding: 0.5rem 1.5rem;
+        border: none;
+        background: #333;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        
+    }
+    
+    .menu-filters button.active,
+    .menu-filters button:hover {
+        background: #b91c1c;
+        color: white;
+    }
+    
+    .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 1rem;
+    }
+    
+    .menu-item {
+        background: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.3s;
+    }
+    
+    .menu-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .menu-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .item-details {
+        padding: 1.5rem;
+        text-align: left;
+    }
+    
+    .price {
+        color: #b91c1c;
+        font-weight: 600;
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .item-details h3 {
+        margin-bottom: 0.5rem;
+        font-family: 'Playfair Display', serif;
+    }
+    
+    /* Delivery */
+    .delivery-section {
+        padding: 4rem 5%;
+        background: #f8f9fa;
+    }
+    
+    .delivery-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .delivery-content h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .delivery-apps {
+        margin-top: 3rem;
+    }
+    
+    .app-row {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+  /*footer*/
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 2rem 0;
+            margin: 0;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section {
+            flex: 1;
+            margin: 1rem;
+            min-width: 200px;
+        }
+        h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 0.5rem;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .social-icons a {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        button {
+            background-color: #f4a460;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .footer-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .footer-brand {
+            max-width: 100%;
+            text-align: center;
+        }
+       
+
+    }
+    
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+    
+        nav ul {
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    
+        .menu-section h1 {
+            font-size: 2.5rem;
+        }
+    
+        .footer-links {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .menu-filters {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    
+        .menu-filters button {
+            width: 100%;
+        }
+    
+        .delivery-apps .app-row {
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .footer-links {
+            grid-template-columns: 1fr;
+        }
+    
+        .instagram-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    /* Mobile Menu not finished  */
+    @media (max-width: 768px) {
+        nav {
+            width: 100%;
+        }
+    
+        nav ul {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+</style>
+
+
+
+
+</body>
+</html>
