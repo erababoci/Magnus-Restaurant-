@@ -32,7 +32,7 @@
                 navLinks.forEach(nav => nav.classList.remove("active"));
                 this.classList.add("active");
             });
-        });
+        }); 
     </script>
     <style>
         /* menu syle*/
@@ -122,6 +122,17 @@ nav ul li a:hover {
             <h1>Our Menu</h1>
             <p class="subtitle">We consider all the drivers of change gives you the components you need to change to create a truly happens.</p>
         
+            <!-- Search Bar -->
+            <div class="search-container">
+                <input type="text" id="menu-search" placeholder="Search our menu..." class="search-input">
+                <div class="search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+            </div>
+
             <div class="menu-filters">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="breakfast">Breakfast</button>
@@ -188,7 +199,29 @@ nav ul li a:hover {
             document.addEventListener("DOMContentLoaded", function () {
                 const filterButtons = document.querySelectorAll(".filter-btn");
                 const menuItems = document.querySelectorAll(".menu-item");
+                const searchInput = document.getElementById("menu-search");
+                let activeFilter = "all";
         
+                // Filter function that combines search and category filters
+                function filterItems() {
+                    const searchTerm = searchInput.value.toLowerCase();
+                    
+                    menuItems.forEach(item => {
+                        const category = item.getAttribute("data-category");
+                        const itemName = item.querySelector("h3").textContent.toLowerCase();
+                        const itemDescription = item.querySelector("p").textContent.toLowerCase();
+                        const matchesSearch = itemName.includes(searchTerm) || itemDescription.includes(searchTerm);
+                        const matchesCategory = activeFilter === "all" || category === activeFilter;
+                        
+                        if (matchesSearch && matchesCategory) {
+                            item.style.display = "block";
+                        } else {
+                            item.style.display = "none";
+                        }
+                    });
+                }
+        
+                // Category filter buttons
                 filterButtons.forEach(button => {
                     button.addEventListener("click", function () {
                         // Remove active class from all buttons
@@ -198,18 +231,15 @@ nav ul li a:hover {
                         this.classList.add("active");
         
                         // Get the filter value from the clicked button
-                        const filterValue = this.getAttribute("data-filter");
-        
-                        // Show/hide menu items based on the selected filter
-                        menuItems.forEach(item => {
-                            if (filterValue === "all" || item.getAttribute("data-category") === filterValue) {
-                                item.style.display = "block";
-                            } else {
-                                item.style.display = "none";
-                            }
-                        });
+                        activeFilter = this.getAttribute("data-filter");
+                        
+                        // Apply combined filters
+                        filterItems();
                     });
                 });
+                
+                // Search input event
+                searchInput.addEventListener("input", filterItems);
             });
         </script>
         
@@ -248,7 +278,7 @@ nav ul li a:hover {
                 <h3>Contact Us</h3>
                 <p>123 Gourmet Street<br>Foodville, FV 12345</p>
                 <p>Phone: (555) 123-4567</p>
-                <p>Email: info@deliciousrestaurant.com</p>
+                <p>Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3b52555d547b5f5e57525852544e48495e484f5a4e495a554f15585456">[email&#160;protected]</a></p>
             </div>
             <div class="footer-section">
                 <h3>Opening Hours</h3>
@@ -310,6 +340,42 @@ nav ul li a:hover {
         color: rgb(218, 213, 213);
     }
     
+    /* Search Bar Styles */
+    .search-container {
+        position: relative;
+        max-width: 500px;
+        margin: 0 auto 2rem;
+    }
+    
+    .search-input {
+        width: 100%;
+        padding: 0.75rem 1rem 0.75rem 2.5rem;
+        border: none;
+        border-radius: 2rem;
+        background: #333;
+        color: white;
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+    
+    .search-input:focus {
+        outline: none;
+        background: #444;
+        box-shadow: 0 0 0 2px rgba(185, 28, 28, 0.5);
+    }
+    
+    .search-input::placeholder {
+        color: #aaa;
+    }
+    
+    .search-icon {
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+    }
+    
     .menu-filters {
         display: flex;
         justify-content: center;
@@ -325,7 +391,7 @@ nav ul li a:hover {
         border-radius: 2rem;
         cursor: pointer;
         transition: all 0.3s;
-        
+        color: white;
     }
     
     .menu-filters button.active,
@@ -496,6 +562,10 @@ nav ul li a:hover {
         .footer-links {
             grid-template-columns: repeat(2, 1fr);
         }
+        
+        .search-container {
+            max-width: 90%;
+        }
     }
     
     @media (max-width: 640px) {
@@ -539,5 +609,5 @@ nav ul li a:hover {
 
 
 
-</body>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
 </html>
